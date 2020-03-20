@@ -1,13 +1,12 @@
 //node core modules : http, fs, path, os
-const http = require("http");
-// read, write, delete, append
+const http = require("http"); // to create server
 
 const PORT = 5000;
 http
   .createServer((req, res) => {
     // headers
     if (req.url == "/") {
-      res.writeHead(200, { "Content-Type": "text/html" });
+      let path = res.writeHead(200, { "Content-Type": "text/html" });
       res.write("<h1>hello world from HOME page</h1>");
       res.end();
     } else if (req.url == "/about") {
